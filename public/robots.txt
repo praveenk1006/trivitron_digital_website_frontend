@@ -1,0 +1,15 @@
+# Robots.txt for Trivitron Digital.ai
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow admin and authentication pages
+Disallow: /auth/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://trivitrondigital.ai/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+Crawl-delay: 1
