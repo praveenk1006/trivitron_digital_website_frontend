@@ -36,7 +36,7 @@
 
 ### 📁 Root Directory Structure
 
-\`\`\`
+```
 trivitron-digital-website/
 ├── app/                    # Next.js App Router pages
 ├── components/             # React components
@@ -49,7 +49,7 @@ trivitron-digital-website/
 ├── tailwind.config.js     # Tailwind CSS configuration
 ├── next.config.js         # Next.js configuration
 └── .gitignore            # Git ignore patterns
-\`\`\`
+```
 
 ### 📁 App Directory (Pages)
 
@@ -115,7 +115,7 @@ trivitron-digital-website/
 
 ### 🏠 Home Page Flow (`app/page.tsx`)
 
-\`\`\`typescript
+```typescript
 export default function HomePage() {
   return (
     <main className="min-h-screen">
@@ -124,7 +124,7 @@ export default function HomePage() {
     </main>
   )
 }
-\`\`\`
+```
 
 **Logic Flow:**
 1. Renders Hero component with main value proposition
@@ -133,7 +133,7 @@ export default function HomePage() {
 
 ### 🦸 Hero Component (`components/hero.tsx`)
 
-\`\`\`typescript
+```typescript
 export function Hero() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   
@@ -143,7 +143,7 @@ export function Hero() {
   // - Key statistics display
   // - Interactive dashboard preview
 }
-\`\`\`
+```
 
 **Key Features:**
 - **State Management**: Video modal state
@@ -153,7 +153,7 @@ export function Hero() {
 
 ### 📊 Stats Component (`components/stats.tsx`)
 
-\`\`\`typescript
+```typescript
 export function Stats() {
   const [counts, setCounts] = useState({
     hospitals: 0, countries: 0, patients: 0, accuracy: 0
@@ -165,7 +165,7 @@ export function Stats() {
     // Incremental animation over 2 seconds
   }, [])
 }
-\`\`\`
+```
 
 **Animation Logic:**
 1. **Initial State**: All counters start at 0
@@ -175,7 +175,7 @@ export function Stats() {
 
 ### 🔐 Authentication Gate (`components/pricing-auth.tsx`)
 
-\`\`\`typescript
+```typescript
 export function PricingAuth() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [user, setUser] = useState<any>(null)
@@ -201,7 +201,7 @@ export function PricingAuth() {
   
   return <AuthenticatedView />   // Full pricing content
 }
-\`\`\`
+```
 
 **Authentication Logic:**
 1. **Loading State**: Shows spinner while checking auth
@@ -213,7 +213,7 @@ export function PricingAuth() {
 
 ### 📝 Login Form (`components/auth/login-form.tsx`)
 
-\`\`\`typescript
+```typescript
 export function LoginForm() {
   const [formData, setFormData] = useState({ email: "", password: "" })
   const [isLoading, setIsLoading] = useState(false)
@@ -233,7 +233,7 @@ export function LoginForm() {
     }, 1500)
   }
 }
-\`\`\`
+```
 
 **Form Logic:**
 1. **State Management**: Form data and loading state
@@ -244,7 +244,7 @@ export function LoginForm() {
 
 ### 🛍️ Products Component (`components/products.tsx`)
 
-\`\`\`typescript
+```typescript
 export function Products() {
   const products = [/* Product data array */]
   const iotSolutions = [/* IoT solutions data */]
@@ -266,7 +266,7 @@ export function Products() {
     </Tabs>
   )
 }
-\`\`\`
+```
 
 **Tabbed Interface Logic:**
 1. **Data Structure**: Static arrays for products and IoT solutions
@@ -276,7 +276,7 @@ export function Products() {
 
 ### 💰 Pricing Component (`components/pricing.tsx`)
 
-\`\`\`typescript
+```typescript
 export function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly")
   
@@ -289,7 +289,7 @@ export function Pricing() {
     // ... other plans
   ]
 }
-\`\`\`
+```
 
 **Pricing Logic:**
 1. **Billing Toggle**: State for monthly/annual pricing
@@ -303,7 +303,7 @@ export function Pricing() {
 
 ### Authentication States
 
-\`\`\`mermaid
+```mermaid
 graph TD
     A[User Visits Site] --> B{Authenticated?}
     B -->|No| C[Can Access Public Pages]
@@ -316,12 +316,12 @@ graph TD
     I --> J[Store Auth in localStorage]
     J --> K[Redirect to /pricing]
     K --> D
-\`\`\`
+```
 
 ### Authentication Implementation
 
 #### 1. Auth Check (PricingAuth Component)
-\`\`\`typescript
+```typescript
 useEffect(() => {
   const authData = localStorage.getItem("trivitron_auth")
   if (authData) {
@@ -333,10 +333,10 @@ useEffect(() => {
   }
   setIsLoading(false)
 }, [])
-\`\`\`
+```
 
 #### 2. Login Process
-\`\`\`typescript
+```typescript
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault()
   setIsLoading(true)
@@ -353,16 +353,16 @@ const handleSubmit = async (e: React.FormEvent) => {
     router.push("/pricing")
   }, 1500)
 }
-\`\`\`
+```
 
 #### 3. Logout Process
-\`\`\`typescript
+```typescript
 const handleLogout = () => {
   localStorage.removeItem("trivitron_auth")
   setIsAuthenticated(false)
   setUser(null)
 }
-\`\`\`
+```
 
 ---
 
@@ -370,7 +370,7 @@ const handleLogout = () => {
 
 ### Next.js App Router Structure
 
-\`\`\`
+```
 app/
 ├── page.tsx                 # / (Home)
 ├── about/
@@ -388,11 +388,11 @@ app/
     │   └── page.tsx        # /auth/login
     └── signup/
         └── page.tsx        # /auth/signup
-\`\`\`
+```
 
 ### Navigation Component (`components/header.tsx`)
 
-\`\`\`typescript
+```typescript
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -412,7 +412,7 @@ useEffect(() => {
   window.addEventListener("scroll", handleScroll)
   return () => window.removeEventListener("scroll", handleScroll)
 }, [])
-\`\`\`
+```
 
 **Navigation Features:**
 - **Responsive Design**: Desktop nav + mobile hamburger menu
@@ -427,7 +427,7 @@ useEffect(() => {
 ### Component-Level State
 
 #### 1. Form State Management
-\`\`\`typescript
+```typescript
 // Login/Signup forms
 const [formData, setFormData] = useState({
   email: "",
@@ -439,10 +439,10 @@ const [formData, setFormData] = useState({
 const handleInputChange = (field: string, value: string) => {
   setFormData(prev => ({ ...prev, [field]: value }))
 }
-\`\`\`
+```
 
 #### 2. UI State Management
-\`\`\`typescript
+```typescript
 // Modal/dropdown states
 const [isMenuOpen, setIsMenuOpen] = useState(false)
 const [showPassword, setShowPassword] = useState(false)
@@ -452,10 +452,10 @@ const [isLoading, setIsLoading] = useState(false)
 
 // Tab states (handled by Radix UI)
 <Tabs defaultValue="saas" onValueChange={setActiveTab}>
-\`\`\`
+```
 
 #### 3. Authentication State
-\`\`\`typescript
+```typescript
 const [isAuthenticated, setIsAuthenticated] = useState(false)
 const [user, setUser] = useState<any>(null)
 
@@ -464,11 +464,11 @@ localStorage.setItem("trivitron_auth", JSON.stringify({
   isAuthenticated: true,
   user: userData
 }))
-\`\`\`
+```
 
 ### Global State (Layout Level)
 
-\`\`\`typescript
+```typescript
 // app/layout.tsx
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -481,7 +481,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-\`\`\`
+```
 
 ---
 
@@ -489,7 +489,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ### Tailwind CSS Configuration
 
-\`\`\`javascript
+```javascript
 // tailwind.config.js
 module.exports = {
   content: [
@@ -513,11 +513,11 @@ module.exports = {
     },
   },
 }
-\`\`\`
+```
 
 ### CSS Custom Properties (`app/globals.css`)
 
-\`\`\`css
+```css
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -532,27 +532,27 @@ module.exports = {
     background-size: 20px 20px;
   }
 }
-\`\`\`
+```
 
 ### Component Styling Patterns
 
 #### 1. Utility-First Approach
-\`\`\`typescript
+```typescript
 <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50">
-\`\`\`
+```
 
 #### 2. Responsive Design
-\`\`\`typescript
+```typescript
 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-\`\`\`
+```
 
 #### 3. Interactive States
-\`\`\`typescript
+```typescript
 <button className="bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
-\`\`\`
+```
 
 #### 4. Component Variants (using CVA)
-\`\`\`typescript
+```typescript
 const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-md text-sm font-medium",
   {
@@ -568,7 +568,7 @@ const buttonVariants = cva(
     },
   }
 )
-\`\`\`
+```
 
 ---
 
@@ -577,7 +577,7 @@ const buttonVariants = cva(
 ### Static Data Structure
 
 #### Product Data
-\`\`\`typescript
+```typescript
 const products = [
   {
     id: "letsgo",
@@ -595,10 +595,10 @@ const products = [
   },
   // ... other products
 ]
-\`\`\`
+```
 
 #### Leadership Data
-\`\`\`typescript
+```typescript
 const leaders = [
   {
     name: "Dr. G.S.K. Velu",
@@ -609,12 +609,12 @@ const leaders = [
   },
   // ... other leaders
 ]
-\`\`\`
+```
 
 ### Form Data Flow
 
 #### 1. Contact Form
-\`\`\`typescript
+```typescript
 const [formData, setFormData] = useState({
   name: "", email: "", phone: "", organization: "",
   role: "", hospitalSize: "", interest: "", message: ""
@@ -626,10 +626,10 @@ const handleSubmit = (e: React.FormEvent) => {
   console.log("Form submitted:", formData)
   alert("Thank you for your interest! We will contact you within 24 hours.")
 }
-\`\`\`
+```
 
 #### 2. Authentication Forms
-\`\`\`typescript
+```typescript
 // Login flow
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault()
@@ -644,12 +644,12 @@ const handleSubmit = async (e: React.FormEvent) => {
     router.push("/pricing")
   }, 1500)
 }
-\`\`\`
+```
 
 ### Component Communication
 
 #### Parent-Child Props
-\`\`\`typescript
+```typescript
 // Parent component
 <PricingAuth />
 
@@ -668,7 +668,7 @@ function PricingAuth() {
     </div>
   )
 }
-\`\`\`
+```
 
 ---
 
@@ -682,7 +682,7 @@ function PricingAuth() {
 - Dynamic imports for heavy components
 
 #### 2. Image Optimization
-\`\`\`typescript
+```typescript
 // Using Next.js Image component (when available)
 import Image from 'next/image'
 
@@ -693,7 +693,7 @@ import Image from 'next/image'
   height={400}
   className="rounded-lg shadow-lg"
 />
-\`\`\`
+```
 
 #### 3. CSS Optimization
 - Tailwind CSS purges unused styles in production
@@ -703,7 +703,7 @@ import Image from 'next/image'
 ### State Management Optimization
 
 #### 1. Minimal Re-renders
-\`\`\`typescript
+```typescript
 // Using useCallback for event handlers
 const handleInputChange = useCallback((field: string, value: string) => {
   setFormData(prev => ({ ...prev, [field]: value }))
@@ -713,60 +713,60 @@ const handleInputChange = useCallback((field: string, value: string) => {
 const filteredProducts = useMemo(() => {
   return products.filter(product => product.category === activeCategory)
 }, [products, activeCategory])
-\`\`\`
+```
 
 #### 2. Efficient State Updates
-\`\`\`typescript
+```typescript
 // Batch state updates
 const handleFormSubmit = () => {
   setIsLoading(true)
   setError(null)
   setFormData(prev => ({ ...prev, submitted: true }))
 }
-\`\`\`
+```
 
 ### Bundle Size Optimization
 
 #### 1. Tree Shaking
-\`\`\`typescript
+```typescript
 // Import only what you need
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
 // Instead of importing entire libraries
 import { Calendar, Mail, Phone } from 'lucide-react'
-\`\`\`
+```
 
 #### 2. Dynamic Imports
-\`\`\`typescript
+```typescript
 // For heavy components that aren't immediately needed
 const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
   loading: () => <div>Loading...</div>
 })
-\`\`\`
+```
 
 ### SEO & Accessibility
 
 #### 1. Semantic HTML
-\`\`\`typescript
+```typescript
 <main className="min-h-screen">
   <section aria-labelledby="hero-heading">
     <h1 id="hero-heading">Democratizing Advanced Healthcare</h1>
   </section>
 </main>
-\`\`\`
+```
 
 #### 2. Meta Tags (in layout.tsx)
-\`\`\`typescript
+```typescript
 export const metadata: Metadata = {
   title: "Trivitron Digital - Democratizing Advanced Healthcare Technology",
   description: "AI-powered SaaS platforms and IoT smart-hospital devices...",
   keywords: "healthcare technology, AI diagnostics, IoT medical devices...",
 }
-\`\`\`
+```
 
 #### 3. Accessibility Features
-\`\`\`typescript
+```typescript
 // Screen reader support
 <div aria-live="polite" aria-atomic="true">
   {formatTime(time)}
@@ -778,7 +778,7 @@ export const metadata: Metadata = {
   onKeyDown={(e) => e.key === 'Enter' && handleClick()}
   aria-pressed={isActive}
 >
-\`\`\`
+```
 
 ---
 
@@ -795,7 +795,7 @@ export const metadata: Metadata = {
 - **Type Guards**: Runtime type checking where needed
 
 ### 3. Error Handling
-\`\`\`typescript
+```typescript
 // Form validation
 const [errors, setErrors] = useState<Record<string, string>>({})
 
@@ -806,7 +806,7 @@ const validateForm = () => {
   setErrors(newErrors)
   return Object.keys(newErrors).length === 0
 }
-\`\`\`
+```
 
 ### 4. Testing Considerations
 - Components are designed to be easily testable
