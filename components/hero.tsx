@@ -10,11 +10,11 @@ export function Hero() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
-      <div className="container mx-auto px-6 max-w-7xl py-20 relative z-10">
+      <div className="w-full px-6 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 order-1 lg:order-1 text-left">
             <div className="space-y-6">

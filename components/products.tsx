@@ -48,24 +48,24 @@ function ProductCarousel({ products }: { products: any[] }) {
 
   return (
     <div className="relative w-full">
-      <div className="flex items-center">
-        <div className="w-16 mr-4 flex-shrink-0">
+      <div className="flex items-stretch">
+        <div className="w-44 mr-4 flex-shrink-0 flex">
           <button
             onClick={goToPrevious}
-            className="w-full flex flex-col items-center p-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-400 transition-colors duration-200 shadow-sm"
+            className="w-full h-full flex flex-col items-center justify-center gap-2 p-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-400 transition-colors duration-200 shadow-sm"
           >
-            <ChevronLeft className="h-6 w-6 text-gray-600 mb-1" />
-            <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded flex items-center justify-center">
-              {renderIcon(products[previousIndex]?.icon, "h-3 w-3 text-white")}
+            <ChevronLeft className="h-7 w-7 text-gray-600" />
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-indigo-500 rounded flex items-center justify-center">
+              {renderIcon(products[previousIndex]?.icon, "h-6 w-6 text-white")}
             </div>
           </button>
         </div>
 
         {/* Main carousel - now takes remaining space */}
         <div className="flex-1">
-          <Card className="bg-white shadow-lg border-2 border-blue-300 aspect-video overflow-hidden">
+          <Card className="bg-white shadow-lg border-2 border-blue-300 h-96 overflow-hidden">
             <CardContent className="p-0 h-full flex">
-              <div className="w-1/2 p-6 flex flex-col justify-center">
+              <div className="w-1/2 px-6 py-4 flex flex-col justify-center">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 mr-3">
                     {renderIcon(products[currentIndex]?.icon, "h-5 w-5 text-white")}
@@ -93,7 +93,7 @@ function ProductCarousel({ products }: { products: any[] }) {
 
               <div className="w-1/2 relative">
                 <img
-                  src={`/Advanced_LIS.png?key=main&height=300&width=400&query=${encodeURIComponent(`realistic ${products[currentIndex]?.name} healthcare technology medical equipment`)}`}
+                  src={products[currentIndex]?.image || "/images/products/fallback.png"}
                   alt={products[currentIndex]?.name}
                   className="w-full h-full object-cover"
                 />
@@ -102,14 +102,14 @@ function ProductCarousel({ products }: { products: any[] }) {
           </Card>
         </div>
 
-        <div className="w-16 ml-4 flex-shrink-0">
+        <div className="w-44 ml-4 flex-shrink-0 flex">
           <button
             onClick={goToNext}
-            className="w-full flex flex-col items-center p-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-400 transition-colors duration-200 shadow-sm"
+            className="w-full h-full flex flex-col items-center justify-center gap-2 p-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-400 transition-colors duration-200 shadow-sm"
           >
-            <ChevronRight className="h-6 w-6 text-gray-600 mb-1" />
-            <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded flex items-center justify-center">
-              {renderIcon(products[nextIndex]?.icon, "h-3 w-3 text-white")}
+            <ChevronRight className="h-7 w-7 text-gray-600" />
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-indigo-500 rounded flex items-center justify-center">
+              {renderIcon(products[nextIndex]?.icon, "h-6 w-6 text-white")}
             </div>
           </button>
         </div>
@@ -144,6 +144,7 @@ export default function Products() {
         {
           name: "Advanced Lab Information System (LIS)",
           icon: Database,
+          image: "/images/products/advanced-lis.png",
           features: [
             "Cloud-based LIS (2000+ devices)",
             "Sample tracking",
@@ -158,6 +159,7 @@ export default function Products() {
         {
           name: "Web-Based PACS Solution",
           icon: Eye,
+          image: "/images/products/web-pacs.png",
           features: ["Browser-based PACS", "Zero-footprint DICOM viewing from any modality"],
           impact:
             "AI image enhancement & auto-tagging reduce reporting delays, enable faster collaboration, and improve radiology efficiency.",
@@ -165,6 +167,7 @@ export default function Products() {
         {
           name: "Ophthalmology Diagnostic Solution",
           icon: Eye,
+          image: "/images/products/ophthalmology-solution.png",
           features: [
             "Detects 13 retinal diseases (DR, AMD, glaucoma, RVO, pathologic myopia, etc.) with AI results in ~10 seconds",
             "High-performance DR module with automated lesion annotation; sensitivity up to 92.96%",
@@ -176,6 +179,7 @@ export default function Products() {
         {
           name: "Interoperability Ecosystem",
           icon: Activity,
+          image: "/images/products/interoperability-ecosystem.png",
           features: ["Data Integration Setup - from HIS, EMR, ERP, CRM, and medical devices using HL7/FHIR connectors"],
           impact: "Automating ingestion and unification of integrated data into a secure, standards-based data lake.",
         },
@@ -192,6 +196,7 @@ export default function Products() {
         {
           name: "Smart Reporting – Chat & Voice",
           icon: MessageSquare,
+          image: "/images/products/smart-reporting.png",
           features: ["Conversational report generation", "Voice/Chat-based queries"],
           impact:
             "AI addresses patients queries from structured reports instantly, provides advisory that helps saving time and improving their decision speed for consultation.",
@@ -199,6 +204,7 @@ export default function Products() {
         {
           name: "AI-Driven Patient Health Records (ABHA-linked)",
           icon: Heart,
+          image: "/images/products/patient-health-records.png",
           features: ["Longitudinal health records (lifetime medical history)", "Patient health records"],
           impact:
             "Unified health record improves care coordination, reduces duplicate tests, enables predictive care. AI insights from ePROM personalize treatments.",
@@ -206,6 +212,7 @@ export default function Products() {
         {
           name: "AI-Guided Patient Journey Portal",
           icon: Smartphone,
+          image: "/images/products/patient-journey-portal.png",
           features: [
             "Appointments, billing & insurance integration",
             "Teleconsultation",
@@ -221,6 +228,7 @@ export default function Products() {
         {
           name: "Preventive Care (Chat & Voice enabled)",
           icon: Stethoscope,
+          image: "/images/products/preventive-care.png",
           features: [
             "WhatsApp/SMS/Voice recovery guidance",
             "Post-op monitoring",
@@ -234,6 +242,7 @@ export default function Products() {
         {
           name: "Data Security and Compliance",
           icon: Shield,
+          image: "/images/products/data-security-compliance.png",
           features: ["Compliance-First Data Governance", "AI-driven Risk Validation"],
           impact:
             "AI automated workflows for HIPAA, ABHA, and DPDPR compliance, continuously validate data access, detect anomalies, and predict potential security breaches.",
@@ -251,6 +260,7 @@ export default function Products() {
         {
           name: "Smart Dashboard – Trends & Analytics",
           icon: BarChart3,
+          image: "/images/products/smart-dashboard.png",
           features: [
             "Health/Clinical/Operational trends based on longitudinal data",
             "Population-level insights",
@@ -262,12 +272,14 @@ export default function Products() {
         {
           name: "Data Lake",
           icon: Database,
+          image: "/images/products/data-lake.png",
           features: ["Unified repository for health data", "Secure, scalable storage"],
           impact: "AI-ready infrastructure supports research, predictive modeling, and precision medicine innovation.",
         },
         {
           name: "Digital Performance Marketing",
           icon: TrendingUp,
+          image: "/images/products/digital-performance-marketing.png",
           features: ["Targeted campaigns", "ROI tracking", "SEO optimization", "Quality lead generation"],
           impact:
             "AI targeting improves patient acquisition, lowers costs, and drives measurable ROI for healthcare providers.",
@@ -315,7 +327,7 @@ export default function Products() {
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="w-full px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Healthcare Technology Solutions</h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">

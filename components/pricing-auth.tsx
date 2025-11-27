@@ -36,7 +36,7 @@ export function PricingAuth() {
   if (!isAuthenticated) {
     return (
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 max-w-7xl">
+        <div className="w-full px-6">
           <div className="max-w-5xl mx-auto">
             {/* Header */}
             <div className="text-center mb-12">
@@ -168,7 +168,7 @@ export function PricingAuth() {
     <div>
       {/* Welcome Message for Authenticated Users */}
       <div className="bg-blue-50 border-b border-blue-200">
-        <div className="container mx-auto px-6 max-w-7xl py-4">
+        <div className="w-full px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">

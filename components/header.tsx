@@ -31,7 +31,7 @@ export function Header() {
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">

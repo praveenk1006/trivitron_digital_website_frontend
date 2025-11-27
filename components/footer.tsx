@@ -43,7 +43,7 @@ export function Footer() {
     <footer className="bg-gray-900 text-white">
       {/* Newsletter Section */}
       <div className="border-b border-gray-800">
-        <div className="container mx-auto px-6 max-w-7xl py-12">
+        <div className="w-full px-6 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-2">Stay Updated</h3>
@@ -63,7 +63,7 @@ export function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-6 max-w-7xl py-12">
+      <div className="w-full px-6 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
