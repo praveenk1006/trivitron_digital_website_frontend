@@ -144,7 +144,7 @@ export default function Products() {
         {
           name: "Advanced Lab Information System (LIS)",
           icon: Database,
-          image: "/images/products/advanced-lis.png",
+          image: "/images/Advanced_LIS.png",
           features: [
             "Cloud-based LIS (2000+ devices)",
             "Sample tracking",
@@ -159,7 +159,7 @@ export default function Products() {
         {
           name: "Web-Based PACS Solution",
           icon: Eye,
-          image: "/images/products/web-pacs.png",
+          image: "/images/web-pacs.png",
           features: ["Browser-based PACS", "Zero-footprint DICOM viewing from any modality"],
           impact:
             "AI image enhancement & auto-tagging reduce reporting delays, enable faster collaboration, and improve radiology efficiency.",
@@ -167,7 +167,7 @@ export default function Products() {
         {
           name: "Ophthalmology Diagnostic Solution",
           icon: Eye,
-          image: "/images/products/ophthalmology-solution.png",
+          image: "/images/ophthalmology-solution.png",
           features: [
             "Detects 13 retinal diseases (DR, AMD, glaucoma, RVO, pathologic myopia, etc.) with AI results in ~10 seconds",
             "High-performance DR module with automated lesion annotation; sensitivity up to 92.96%",
@@ -179,7 +179,7 @@ export default function Products() {
         {
           name: "Interoperability Ecosystem",
           icon: Activity,
-          image: "/images/products/interoperability-ecosystem.png",
+          image: "/images/interoperability-ecosystem.png",
           features: ["Data Integration Setup - from HIS, EMR, ERP, CRM, and medical devices using HL7/FHIR connectors"],
           impact: "Automating ingestion and unification of integrated data into a secure, standards-based data lake.",
         },
@@ -196,7 +196,7 @@ export default function Products() {
         {
           name: "Smart Reporting – Chat & Voice",
           icon: MessageSquare,
-          image: "/images/products/smart-reporting.png",
+          image: "/images/smart-reporting.png",
           features: ["Conversational report generation", "Voice/Chat-based queries"],
           impact:
             "AI addresses patients queries from structured reports instantly, provides advisory that helps saving time and improving their decision speed for consultation.",
@@ -204,7 +204,7 @@ export default function Products() {
         {
           name: "AI-Driven Patient Health Records (ABHA-linked)",
           icon: Heart,
-          image: "/images/products/patient-health-records.png",
+          image: "/images/patient-health-records.png",
           features: ["Longitudinal health records (lifetime medical history)", "Patient health records"],
           impact:
             "Unified health record improves care coordination, reduces duplicate tests, enables predictive care. AI insights from ePROM personalize treatments.",
@@ -212,7 +212,7 @@ export default function Products() {
         {
           name: "AI-Guided Patient Journey Portal",
           icon: Smartphone,
-          image: "/images/products/patient-journey-portal.png",
+          image: "/images/patient-journey-portal.png",
           features: [
             "Appointments, billing & insurance integration",
             "Teleconsultation",
@@ -228,7 +228,7 @@ export default function Products() {
         {
           name: "Preventive Care (Chat & Voice enabled)",
           icon: Stethoscope,
-          image: "/images/products/preventive-care.png",
+          image: "/images/preventive-care.png",
           features: [
             "WhatsApp/SMS/Voice recovery guidance",
             "Post-op monitoring",
@@ -242,7 +242,7 @@ export default function Products() {
         {
           name: "Data Security and Compliance",
           icon: Shield,
-          image: "/images/products/data-security-compliance.png",
+          image: "/images/data-security-compliance.png",
           features: ["Compliance-First Data Governance", "AI-driven Risk Validation"],
           impact:
             "AI automated workflows for HIPAA, ABHA, and DPDPR compliance, continuously validate data access, detect anomalies, and predict potential security breaches.",
@@ -260,7 +260,7 @@ export default function Products() {
         {
           name: "Smart Dashboard – Trends & Analytics",
           icon: BarChart3,
-          image: "/images/products/smart-dashboard.png",
+          image: "/images/smart-dashboard.png",
           features: [
             "Health/Clinical/Operational trends based on longitudinal data",
             "Population-level insights",
@@ -272,14 +272,14 @@ export default function Products() {
         {
           name: "Data Lake",
           icon: Database,
-          image: "/images/products/data-lake.png",
+          image: "/images/data-lake.png",
           features: ["Unified repository for health data", "Secure, scalable storage"],
           impact: "AI-ready infrastructure supports research, predictive modeling, and precision medicine innovation.",
         },
         {
           name: "Digital Performance Marketing",
           icon: TrendingUp,
-          image: "/images/products/digital-performance-marketing.png",
+          image: "/images/digital-performance-marketing.png",
           features: ["Targeted campaigns", "ROI tracking", "SEO optimization", "Quality lead generation"],
           impact:
             "AI targeting improves patient acquisition, lowers costs, and drives measurable ROI for healthcare providers.",
